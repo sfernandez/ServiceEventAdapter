@@ -9,7 +9,7 @@ class ServiceEventAdapterRouteBuilder : RouteBuilder() {
                 "&queue=myService" +
                 "&routingKey=service1" +
                 ""
-        ).to("file:/tmp/test.txt")
+        ).to("http4:localhost/event/service")
     }
 
 }
