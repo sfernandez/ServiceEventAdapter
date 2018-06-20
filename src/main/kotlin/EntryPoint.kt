@@ -1,9 +1,15 @@
 import org.apache.camel.builder.RouteBuilder
 import org.apache.camel.main.Main
 
-class ServiceEventAdapterRouteBuilder: RouteBuilder() {
+class ServiceEventAdapterRouteBuilder : RouteBuilder() {
     override fun configure() {
-        from("rabbitmq://localhost:5672/testExchange?username=user&password=123").to("file:/tmp/test.txt")
+        from("rabbitmq://localhost:5672/myServiceExchange?" +
+                "username=user" +
+                "&password=123" +
+                "&queue=myService" +
+                "&routingKey=service1" +
+                ""
+        ).to("file:/tmp/test.txt")
     }
 
 }

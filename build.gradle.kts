@@ -32,6 +32,7 @@ repositories {
 dependencies {
     compile(kotlinModule("stdlib-jdk8", kotlin_version))
     compile("org.apache.camel", "camel-core", "2.21.1")
+    compile("org.slf4j","slf4j-nop","1.7.25")
     compile("org.apache.camel", "camel-jetty", "2.21.1")
     compile("org.apache.camel", "camel-http4", "2.21.1")
     compile("org.apache.camel", "camel-rabbitmq", "2.21.1")
